@@ -1,13 +1,18 @@
-var clicks = 0;
+var clicks = 200;
 var totalClicks = 0;
 var autoClick1Count = 0;
 var autoClick1MultiCount = 1;
 var masterMulti = 1;
+var cps10= 0;
+var cps9= 0;
+var cps8= 0;
+var cps7= 0;
+var cps6= 0;
+var cps5= 0;
+var cps4= 0;
+var cps3= 0;
+var cps2= 0; 
 var cps = 0;
-var cps2 = 0;
-
-
-
 
 
     function update(num){
@@ -23,14 +28,24 @@ var cps2 = 0;
     }
     function clicksPerSec(){
       cpsTimeout = setTimeout(function(){
-        var calccps = cps + cps2
-        calccps = calccps /2
 
-         $("#cps").html(numeral(Math.floor(calccps*4)).format('0.[00]a')+"/s")
+        var calccps = cps + cps2 +cps3 +cps4 + cps5 +cps6 +cps7 +cps8+cps9+cps10
+        calccps = calccps /10
+         cps10= cps9
+         cps9= cps8
+         cps8= cps7
+         cps7= cps6
+         cps6= cps5
+         cps5= cps4
+         cps4= cps3
+         cps3= cps2
          cps2= cps
          cps = 0;
+         
+        
+        $("#cps").html(numeral(calccps).format('0.[00]a')+"/s")
         clicksPerSec();
-      }, 250);
+      }, 1000);
     }
     $(function() { clicksPerSec()});
 
@@ -86,13 +101,16 @@ var cps2 = 0;
     $("#autoClick1Multi").click(function(){
         //base price
         var bPrice = 200
-        var scale = 1.35
+        var scale = 1.25
         var price = bPrice
 
         function calcPrice(){
             price = bPrice
             for (i = 0; i < autoClick1MultiCount; i++) {
                 price = price*scale
+                //sets the price to base if there are is only 1 multiplyer
+                //multiplyer count starts at 1 to avoid #*0 = 0 issues. 
+                if (autoClick1MultiCount ===1){price = bPrice}
             }
             price = Math.floor(price)
             return price
