@@ -11,9 +11,9 @@ var cps6= 0;
 var cps5= 0;
 var cps4= 0;
 var cps3= 0;
-var cps2= 0; 
+var cps2= 0;
 var cps = 0;
-
+//test
 
     function update(num){
         if (num<0){clicks = clicks + num}
@@ -41,8 +41,8 @@ var cps = 0;
          cps3= cps2
          cps2= cps
          cps = 0;
-         
-        
+
+
         $("#cps").html(numeral(calccps).format('0.[00]a')+"/s")
         clicksPerSec();
       }, 1000);
@@ -109,7 +109,7 @@ var cps = 0;
             for (i = 0; i < autoClick1MultiCount; i++) {
                 price = price*scale
                 //sets the price to base if there are is only 1 multiplyer
-                //multiplyer count starts at 1 to avoid #*0 = 0 issues. 
+                //multiplyer count starts at 1 to avoid #*0 = 0 issues.
                 if (autoClick1MultiCount ===1){price = bPrice}
             }
             price = Math.floor(price)
