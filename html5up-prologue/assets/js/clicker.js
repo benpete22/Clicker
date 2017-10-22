@@ -1,3 +1,4 @@
+/* @flow */
 var clicks = 200;
 var totalClicks = 0;
 var autoClick1Count = 0;
@@ -30,7 +31,7 @@ var cps = 0;
       cpsTimeout = setTimeout(function(){
 
         var calccps = cps + cps2 +cps3 +cps4 + cps5 +cps6 +cps7 +cps8+cps9+cps10
-        calccps = calccps /10
+        //calccps = calccps /10
          cps10= cps9
          cps9= cps8
          cps8= cps7
@@ -42,10 +43,9 @@ var cps = 0;
          cps2= cps
          cps = 0;
 
-
         $("#cps").html(numeral(calccps).format('0.[00]a')+"/s")
         clicksPerSec();
-      }, 1000);
+      }, 100);
     }
     $(function() { clicksPerSec()});
 
