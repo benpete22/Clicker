@@ -8,13 +8,13 @@ var cps10= 0;
 var cps9= 0;
 var cps8= 0;
 var cps7= 0;
-var cps6= 0;
+var cps6= 0;   //test
 var cps5= 0;
 var cps4= 0;
 var cps3= 0;
 var cps2= 0;
 var cps = 0;
-//test
+
 
     function update(num){
         if (num<0){clicks = clicks + num}
