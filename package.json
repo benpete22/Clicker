@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/benpete22/Clicker#readme",
   "dependencies": {
-    "eslint": "^4.9.0",
+    "eslint": "^8.38.0",
     "flow-bin": "^0.57.3"
   }
 }
